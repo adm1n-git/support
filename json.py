@@ -29,8 +29,8 @@ def validate_json_schema(instance_path, schema_path):
         return;
     except jsonschema.exceptions.ValidationError as err:
         logger.critical(f"Validation Error - {err.message}");
-        logger.critical(f"Validation Error - {jsonschema._utils.format_as_index('instance', err.relative_path)}");
+        logger.critical(f"Validation Error - {jsonschema._utils.format_as_index(err.relative_path)}");
     except jsonschema.exceptions.SchemaError as err:
         logger.critical(f"Schema Error - {err.message}");
-        logger.critical(f"Schema Error - {jsonschema._utils.format_as_index('instance', err.relative_path)}");
+        logger.critical(f"Schema Error - {jsonschema._utils.format_as_index(err.relative_path)}");
     sys.exit(1);
