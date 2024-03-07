@@ -1,9 +1,6 @@
 
 from support.logger import logger;
-import json;
-import os;
-import jsonschema;
-import sys;
+import jsonschema, json, sys, os;
 
 def from_json(path="", str=""):
     if path:
@@ -15,7 +12,7 @@ def from_json(path="", str=""):
     else:
         return json.loads(str);
 
-def to_json(object=dict(), path=""):
+def to_json(path="", object=dict()):
     if path:
         with open(path, "w") as file:
             json.dump(object, file, indent=4);
