@@ -80,7 +80,7 @@ def prepare_attachment(path: str) -> dict:
         "contentBytes": encoded_content
     }
 
-def send_message(to_recipients: list, subject_text: str, body_text: str, attachments: list = None) -> dict:
+def send_message(to_recipients: list, subject_text: str, body_text: str, attachments: list = None) -> None:
     URL = f"{MS_GRAPH_BASE_URL}/me/sendMail"
 
     request_headers = prepare_request_headers()
