@@ -54,12 +54,13 @@ def get_access_token(application_id: str, client_secret: str, scopes: list) -> s
 
 def prepare_request_headers() -> dict:
     if os.getenv("APPLICATION_ID") != None or os.getenv("CLIENT_SECRET") != None:
+        APPLICATION_ID = os.environ.get("APPLICATION_ID")
+        CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
+        SCOPES = ["User.Read", "Mail.ReadWrite", "Mail.Send"]     
+
+    else:
         raise ValueError("The environment variables APPLICATION_ID and CLIENT_SECRET are not defined yet. Please configure.")
     
-    APPLICATION_ID = os.environ.get("APPLICATION_ID")
-    CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
-    SCOPES = ["User.Read", "Mail.ReadWrite", "Mail.Send"]
-
     access_token = get_access_token(application_id=APPLICATION_ID, client_secret=CLIENT_SECRET, scopes=SCOPES)
 
     return {
