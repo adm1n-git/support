@@ -107,4 +107,4 @@ str2dt("2026-09-18 14:30:00")   # -> datetime(2026, 9, 18, 14, 30, 0)
 
 Copyright (c) 2026 Ayyappan Mani. All rights reserved.
 
-This code is proprietary and confidential. No part of it may be copied, modified, distributed, or used without prior written permission from the copyright holder. See [`LICENSE`](./LICENSE) for the full text.
+This code is proprietary and confidential. No part of it may be copied, modified, distributed, or used without prior written permission from the copyright holder.
